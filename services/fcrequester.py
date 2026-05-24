@@ -35,6 +35,7 @@ def fetch_products(page: int = 1, pcode: str = DEFAULT_PCODE):
 
     response = requests.get(url, headers=headers, params=query_string)
     response.raise_for_status()  
+    print(response.url)
     return response.json()       
 
 # data = fetch_products(page=1)
