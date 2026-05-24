@@ -49,6 +49,7 @@ def parse_products(response_data: dict) -> list[dict]:
     for index, product in enumerate(products, start=1):
         result.append({
             "rowIndex": index,
+            "PId": product["PId"],
             "PNm": product["PNm"],
             "BNm": product["BNm"],
             "MRP": product["MRP"],
@@ -57,5 +58,6 @@ def parse_products(response_data: dict) -> list[dict]:
             "rating": product["rating"],
             "CrntStock": product["CrntStock"],
             "shippingdate": product["shippingdate"],
+            "size": product["size"],
         })
     return result

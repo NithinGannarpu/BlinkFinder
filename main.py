@@ -2,6 +2,10 @@ from fastapi import FastAPI
 from routes.items import router as items_router
 from routes.blinkit import router as blinkit_router
 from routes.firstcry import router as firstcry_router
+from database import engine, Base
+import models.item  
+
+Base.metadata.create_all(bind=engine)
 
 
 app = FastAPI()
